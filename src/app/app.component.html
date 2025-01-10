@@ -1,6 +1,26 @@
-<h1 class="text-3xl font-bold underline">
-    Welcome to My First Angular App!
-</h1>
-
-    
-  
+<div
+  class="sidenav-item text-blue-500"
+  *ngFor="let item of sidenavItems"
+  (click)="toggleDropdown(item.name)"
+>
+  <div
+    class="sidenav-item-header"
+    [class.active]="activeDropdown === item.name"
+  >
+    <span>{{ item.name }}</span>
+    <span class="dropdown-arrow">&#9660;</span>
+  </div>
+  <div
+    class="dropdown"
+    *ngIf="activeDropdown === item.name"
+  >
+    <div
+      class="dropdown-item"
+      *ngFor="let subItem of item.subItems"
+      (click)="setActiveSubItem(item.name, subItem); $event.stopPropagation()"
+      [class.active]="activeSubItem === subItem"
+    >
+      {{ subItem }}
+    </div>
+  </div>
+</div>

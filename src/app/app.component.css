@@ -1,0 +1,65 @@
+.sidenav {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    background-color: #f4f4f4;
+    padding: 0;
+  }
+  
+  .sidenav-item {
+    cursor: pointer;
+  }
+  
+  .sidenav-item-header {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: border 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .sidenav-item-header.active {
+    border-left: 4px solid violet; /* Violet left border */
+    background-color: #eaeaea; /* Optional: Highlight active item */
+  }
+  
+  .sidenav-item.active {
+    border-left: 4px solid violet;
+  }
+  
+  .dropdown {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .dropdown-item {
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dropdown-item.active {
+    border-left: 4px solid violet; /* Violet left border */
+    background-color: #eaeaea; /* Optional: Highlight active sub-item */
+  }
+  
+  .dropdown-item:hover {
+    background-color: #ddd; /* Optional: Hover effect */
+  }
+  
+  .dropdown-arrow {
+    font-size: 12px;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+  }
+  
+  .sidenav-item-header.active .dropdown-arrow {
+    transform: rotate(180deg); /* Rotate arrow when active */
+  }
+
+  .sidenav-item-header.active,
+.dropdown-item.active {
+  border-left: 4px solid violet !important; /* Ensure this rule takes precedence */
+  background-color: #eaeaea; /* Optional: Highlight the active item */
+}
